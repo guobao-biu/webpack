@@ -63,3 +63,8 @@ dist
 #.idea
 .idea
 
+#manual add
+package-lock.json
+.yo-rc.json
+
+
