@@ -8,7 +8,17 @@ module.exports = {
         filename: 'main.js'
     },
     module: {
-        rules: []
+        rules: [
+            {
+                test: /\.js$/,
+                use: [{
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['react']
+                    }
+                }]
+            }
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -16,5 +26,9 @@ module.exports = {
             template: 'index.html',
             inject: true
         })
-    ]
+    ],
+    devServer: {
+        open: true,
+        port: 8888
+    }
 }

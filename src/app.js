@@ -1,7 +1,7 @@
-import a from './a'
-import b from './b'
-import c from './c'
+import React from 'react'
+import ReactDom from 'react-dom'
 
-a()
-b()
-c()
+ReactDom.render(
+    <div>React, is so easy!</div>,
+    document.getElementById('app')
+)
