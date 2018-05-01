@@ -7,6 +7,9 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'main.js'
     },
+    externals: {
+      'React': 'React'
+    },
     module: {
         rules: [
             {
@@ -17,6 +20,14 @@ module.exports = {
                         presets: ['react']
                     }
                 }]
+            },
+            {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader'
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/,
+                loader: 'url-loader'
             }
         ]
     },
