@@ -1,6 +1,8 @@
 var path = require('path')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var cleanWebpackPlugin = require('clean-webpack-plugin')
+var webpack = require('webpack')
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 
 module.exports = {
     entry: './src/app.js',
@@ -54,12 +56,21 @@ module.exports = {
             template: 'index.html',
             inject: true
         }),
-        new cleanWebpackPlugin(['dist'])
+        new cleanWebpackPlugin(['dist']),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
+        new webpack.NoEmitOnErrorsPlugin(),
+        new FriendlyErrorsPlugin({
+            compilationSuccessInfo: {
+                messages: [`Your application is running here: http://localhost:8888`],
+            }
+        })
     ],
     devServer: {
         open: false,
         port: 8888,
         contentBase: './src/assets',
-        publicPath: '/'
+        publicPath: '/',
+        hot: true
     }
 }

@@ -12,6 +12,7 @@ ReactDom.render(
         <img src={require('./assets/images/pic5.jpg')} alt='' width='500'/>
         <div className='fa fa-rocket'></div>
         <div className='rocket'>React</div>
+    <div className='rocket'>React</div>
     </div>,
     document.getElementById('app')
 )
