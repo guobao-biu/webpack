@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+}
+body {
+    background: url(../images/pic1.jpg) no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
+}
+#app {
+    background: pink;
+}
+.title {
+    color: green;
+}
+@font-face {
+    font-family: 'guobao';
+    src: url("../fonts/fontawesome-webfont.woff")
+}
+.rocket {
+    font-family: guobao;
+    font-size: 50px;
+}
+.rocket:before {
+    content: '\f135';
+}
