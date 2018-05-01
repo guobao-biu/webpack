@@ -5,8 +5,9 @@ var cleanWebpackPlugin = require('clean-webpack-plugin')
 module.exports = {
     entry: './src/app.js',
     output: {
-        path: path.resolve(__dirname, 'dist/assets'),
-        filename: 'js/main.js'
+        path: path.resolve(__dirname, 'dist/'),
+        filename: 'assets/js/main.js',
+        publicPath: "/"
     },
     externals: {
       'React': 'React'
@@ -35,21 +36,21 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
-                    name: 'images/[name].[hash:7].[ext]'
+                    name: 'assets/images/[name].[hash:7].[ext]'
                 }
             },
             {
                 test: /\.(woff2?|eot|svg|ttf|otf)(\?.*)?$/,
                 loader: 'file-loader',
                 options: {
-                    name: 'fonts/[name].[hash:7].[ext]'
+                    name: 'assets/fonts/[name].[hash:7].[ext]'
                 }
             }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            filename: '../index.html',
+            filename: 'index.html',
             template: 'index.html',
             inject: true
         }),
@@ -57,6 +58,8 @@ module.exports = {
     ],
     devServer: {
         open: false,
-        port: 8888
+        port: 8888,
+        contentBase: './src/assets',
+        publicPath: '/'
     }
 }
