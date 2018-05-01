@@ -8,12 +8,6 @@ body {
     height: 100vh;
     color: #fff;
 }
-#app {
-    background: pink;
-}
-.title {
-    color: green;
-}
 @font-face {
     font-family: 'guobao';
     src: url("../fonts/fontawesome-webfont.woff")

@@ -1,10 +1,17 @@
-import React from 'react'
+import React from 'react?djkjfk'
 import ReactDom from 'react-dom'
 import './assets/css/common.css'
-import pic5 from './assets/images/pic5.jpg'
-
+import './assets/scss/common.less'
+import 'font-awesome/css/font-awesome.min.css'
 
 ReactDom.render(
-    <div className="rocket">React, is a mvvm structure</div>,
+    <div className='container'>
+        <img src={require('./assets/images/pic1.jpg')} alt='' width='500'/>
+        <img src={require('./assets/images/pic3.jpg')} alt='' width='500'/>
+        <img src={require('./assets/images/pic4.jpg')} alt='' width='500'/>
+        <img src={require('./assets/images/pic5.jpg')} alt='' width='500'/>
+        <i className='fa fa-rocket'></i>
+        <div className='rocket'>React</div>
+    </div>,
     document.getElementById('app')
 )
