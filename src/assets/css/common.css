@@ -3,7 +3,6 @@
 }
 body {
     background: url(../images/pic1.jpg) no-repeat;
-    -webkit-background-size: cover;
     background-size: cover;
     height: 100vh;
     color: #fff;
@@ -18,4 +17,9 @@ body {
 }
 .rocket:before {
     content: '\f135';
+}
+.title {
+    margin: 30px 0;
+    font-size: 24px;
+    text-align: center;
 }

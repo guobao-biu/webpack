@@ -5,6 +5,7 @@ var webpack = require('webpack')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 
 module.exports = {
+    mode: 'development',
     entry: './src/app.js',
     output: {
         path: path.resolve(__dirname, 'dist/'),
@@ -18,10 +19,11 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
+                exclude: '/node-modules/',
                 use: [{
                     loader: 'babel-loader',
                     options: {
-                        presets: ['react']
+                        presets: ['react', 'es2015', 'stage-0']
                     }
                 }]
             },
