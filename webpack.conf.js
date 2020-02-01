@@ -68,6 +68,11 @@ module.exports = {
             }
         })
     ],
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    },
     devServer: {
         open: false,
         port: 8888,
